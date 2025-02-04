@@ -3,7 +3,7 @@
   "services": {
     /* service version */
     "version": "1.0",
-    /* dependence of the service on other services */
+    /* service dependencies on other services */
     "dependencies": []
   },
 
