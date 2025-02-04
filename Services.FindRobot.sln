@@ -1,13 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4DE212A1-2E18-4E3F-9827-80CC8313C49A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{AC42CFED-A161-4E67-BC38-A688732FEF71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindRobot", "src\FindRobot\FindRobot.csproj", "{A1024C18-F224-413B-8BBB-0D6CC0C084AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.FindRobot", "src\Services.FindRobot\Services.FindRobot.csproj", "{A1024C18-F224-413B-8BBB-0D6CC0C084AA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "package_description", "package_description", "{FFA0CEFE-8A1A-495E-921C-488929452EF3}"
+	ProjectSection(SolutionItems) = preProject
+		service_info.json = service_info.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindRobot.Services", "src\FindRobot.Services\FindRobot.Services.csproj", "{A7A1A45F-00B6-4855-8262-942FB71BFEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindRobot.Core", "src\FindRobot.Core\FindRobot.Core.csproj", "{FDD92EB8-9132-44FA-AA94-D0D5D50E614B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindRobot.Interface", "src\FindRobot.Interface\FindRobot.Interface.csproj", "{B624912F-3DEC-482F-81C6-DC98A19D7B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,11 +28,26 @@ Global
 		{A1024C18-F224-413B-8BBB-0D6CC0C084AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1024C18-F224-413B-8BBB-0D6CC0C084AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1024C18-F224-413B-8BBB-0D6CC0C084AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A1A45F-00B6-4855-8262-942FB71BFEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A1A45F-00B6-4855-8262-942FB71BFEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A1A45F-00B6-4855-8262-942FB71BFEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A1A45F-00B6-4855-8262-942FB71BFEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD92EB8-9132-44FA-AA94-D0D5D50E614B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD92EB8-9132-44FA-AA94-D0D5D50E614B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD92EB8-9132-44FA-AA94-D0D5D50E614B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD92EB8-9132-44FA-AA94-D0D5D50E614B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B624912F-3DEC-482F-81C6-DC98A19D7B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B624912F-3DEC-482F-81C6-DC98A19D7B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B624912F-3DEC-482F-81C6-DC98A19D7B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B624912F-3DEC-482F-81C6-DC98A19D7B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A1024C18-F224-413B-8BBB-0D6CC0C084AA} = {4DE212A1-2E18-4E3F-9827-80CC8313C49A}
+		{A7A1A45F-00B6-4855-8262-942FB71BFEB1} = {4DE212A1-2E18-4E3F-9827-80CC8313C49A}
+		{FDD92EB8-9132-44FA-AA94-D0D5D50E614B} = {4DE212A1-2E18-4E3F-9827-80CC8313C49A}
+		{B624912F-3DEC-482F-81C6-DC98A19D7B81} = {4DE212A1-2E18-4E3F-9827-80CC8313C49A}
 	EndGlobalSection
 EndGlobal

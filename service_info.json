@@ -1,0 +1,20 @@
+{
+  /* service section */
+  "services": {
+    /* service version */
+    "version": "1.0",
+    /* dependence of the service on other services */
+    "dependencies": []
+  },
+
+  "compilerOptions": {
+    "serviceProjectPath": "/src/Services.FindRobot/**.csproj",
+    "serviceOutputPath": "/opt/Services/FindRobot"
+
+  },
+  "systemd": {
+    /* if the parameter is empty, the service will not be installed. */
+    /* specifies the path to the .service unit file in the repository */
+    "serviceFilePath": ""
+  }
+}
