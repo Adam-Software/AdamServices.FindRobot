@@ -1,6 +1,7 @@
 {
   /* service section */
   "services": {
+    "name": "FindRobot",
     /* service version */
     "version": "1.0",
     /* service dependencies on other services */
@@ -9,8 +10,8 @@
 
   "compilerOptions": {
     "serviceProjectPath": "/src/Services.FindRobot/**.csproj",
-    "serviceOutputPath": "/opt/Services/FindRobot"
-
+    "serviceOutputPath": "/opt/Services/FindRobot",
+    "serviceBuildPath": "/usr/src/Services.FindRobot"
   },
   "systemd": {
     /* if the parameter is empty, the service will not be installed. */
