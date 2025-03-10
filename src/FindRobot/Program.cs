@@ -12,7 +12,7 @@ namespace FindRobot
 {
     public class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             IHost host = Host.CreateDefaultBuilder(args)
                     .ConfigureAppConfiguration((context, config) =>
