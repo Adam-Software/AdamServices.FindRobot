@@ -1,21 +1,16 @@
 {
-  /* service section */
   "services": {
     "name": "FindRobot",
-    /* service version */
-    "version": "1.0",
-    /* service dependencies on other services */
+    "version": "1.0.1.1",
+    "projectType": "DotnetProject",
     "dependencies": []
   },
-
   "compilerOptions": {
-    "serviceProjectPath": "/src/Services.FindRobot/**.csproj",
-    "serviceOutputPath": "/opt/Services/FindRobot",
-    "serviceBuildPath": "/usr/src/Services.FindRobot"
+    "serviceProjectPath": "",
+    "serviceOutputPath": "",
+    "serviceBuildPath": ""
   },
   "systemd": {
-    /* if the parameter is empty, the service will not be installed. */
-    /* specifies the path to the .service unit file in the repository */
     "serviceFilePath": ""
   }
 }

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FindRobot": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
