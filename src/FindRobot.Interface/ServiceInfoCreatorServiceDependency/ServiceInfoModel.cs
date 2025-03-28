@@ -5,6 +5,7 @@ namespace FindRobot.Interface.ServiceInfoCreatorServiceDependency
     public class ServiceInfoModel
     {
         public ServiceSection Services { get; set; } = new ServiceSection();
+        public ExecutionOptionsSection ExecutionOptions = new ExecutionOptionsSection();
         public CompilerOptions CompilerOptions { get; set; } = new CompilerOptions();
         public Systemd Systemd { get; set; } = new Systemd();
     }
@@ -15,6 +16,11 @@ namespace FindRobot.Interface.ServiceInfoCreatorServiceDependency
         public string Version { get; set; } = string.Empty;
         public ProjectType ProjectType { get; set; } = ProjectType.None;
         public List<string> Dependencies { get; set; } = [];
+    }
+    
+    public class ExecutionOptions
+    {
+        public string Arguments { get; set; } = string.Empty;
     }
 
     public class CompilerOptions
