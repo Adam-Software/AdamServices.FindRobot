@@ -5,6 +5,9 @@
     "projectType": "DotnetProject",
     "dependencies": []
   },
+    "ExecutionOptions": {
+      "arguments": ""
+  },
   "compilerOptions": {
     "serviceProjectPath": "",
     "serviceOutputPath": "",
