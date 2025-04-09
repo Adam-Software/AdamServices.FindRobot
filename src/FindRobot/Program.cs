@@ -6,7 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using System;
+using Serilog.Core;
+using ServiceFileCreator.Extensions;
+using ServiceFileCreator.Model;
 using System.Threading.Tasks;
 
 namespace FindRobot
@@ -31,7 +33,7 @@ namespace FindRobot
 
                         services.AddLogging(loggingBuilder =>
                         {
-                            var logger = new LoggerConfiguration()
+                            Logger logger = new LoggerConfiguration()
                                     .ReadFrom.Configuration(context.Configuration)
                                     .CreateLogger();
 
@@ -39,31 +41,15 @@ namespace FindRobot
                             loggingBuilder.AddSerilog(logger, dispose: true);
                         });
 
-                        services.AddSingleton<IServiceInfoCreatorService, ServiceInfoCreatorService>();
+                        services.AddAdamServiceFileCreator();
                         services.AddHostedService<FindRobotService>();
                     })
 
                     .Build();
-            
-            
-            SetServiceInfo(host.Services);
+
+            host.UseAdamServiceFileCreator(projectType: ProjectType.DotnetProject);   
             await host.RunAsync();
 
-        }
-
-        private static void SetServiceInfo(IServiceProvider serviceProvider)
-        {
-            IHostEnvironment hostEnvironment = serviceProvider.GetService<IHostEnvironment>();
-            ILogger<Program> logger = serviceProvider.GetService<ILogger<Program>>();
-
-            var isDevelopment = hostEnvironment.IsDevelopment();
-            if (isDevelopment)
-            {
-                logger.LogInformation("App run in development mode");
-
-                IServiceInfoCreatorService serviceInfoCreatorService = serviceProvider.GetService<IServiceInfoCreatorService>();
-                serviceInfoCreatorService.UpdateOrCreateServiceInfoFile();
-            }
         }
     }
 }

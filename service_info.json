@@ -1,12 +1,12 @@
 {
   "services": {
     "name": "FindRobot",
-    "version": "1.0.1.1",
+    "version": "1.0.1.3",
     "projectType": "DotnetProject",
     "dependencies": []
   },
-    "ExecutionOptions": {
-      "arguments": ""
+  "executionOptions": {
+    "arguments": ""
   },
   "compilerOptions": {
     "serviceProjectPath": "",
