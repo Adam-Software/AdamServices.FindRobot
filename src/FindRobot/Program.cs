@@ -1,4 +1,4 @@
-﻿using FindRobot.Core;
+﻿using DefaultArguments.Extensions;
 using FindRobot.Interface;
 using FindRobot.Services;
 using Microsoft.Extensions.Configuration;
@@ -27,9 +27,11 @@ namespace FindRobot
 
                     .ConfigureServices((context, services) =>
                     {
-                        AppSettingsOptionsService options = new();
+                        services.AddAdamArgumentsParserTransient<ArgumentService>(args);
+
+                        SettingsService options = new();
                         context.Configuration.GetRequiredSection("AppSettingsOptions").Bind(options);
-                        services.AddSingleton<IAppSettingsOptionsService>(options);
+                        services.AddSingleton<ISettingsService>(options);
 
                         services.AddLogging(loggingBuilder =>
                         {
@@ -48,7 +50,7 @@ namespace FindRobot
                     .Build();
 
             host.UseAdamServiceFileCreator(projectType: ProjectType.DotnetProject);   
-            await host.RunAsync();
+            await host.ParseAndRunAsync();
 
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace FindRobot.Interface
 {
-    public interface IAppSettingsOptionsService
+    public interface ISettingsService
     {
         public int Port {  get; set; }
     }

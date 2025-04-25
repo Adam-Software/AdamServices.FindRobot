@@ -15,15 +15,19 @@ namespace FindRobot.Services
         private readonly ILogger<FindRobotService> mLogger;
         private UdpClient mServer;
         private readonly byte[] mReply = Encoding.UTF8.GetBytes("pong");
-        private readonly IAppSettingsOptionsService mAppSettingsService;
 
         public FindRobotService(IServiceProvider serviceProvider)
         {
             mLogger = serviceProvider.GetRequiredService<ILogger<FindRobotService>>();
-            mAppSettingsService = serviceProvider.GetRequiredService<IAppSettingsOptionsService>();
-            
-            mServer = new UdpClient(mAppSettingsService.Port);
-            mLogger.LogInformation("Service running port {port}", mAppSettingsService.Port);
+            ArgumentService argumentService = serviceProvider.GetService<ArgumentService>();
+            ISettingsService settingsService = serviceProvider.GetRequiredService<ISettingsService>();
+
+            int port = settingsService.Port;
+            if (argumentService.Port != 0)
+                port = argumentService.Port;
+
+            mServer = new UdpClient(port);
+            mLogger.LogInformation("Service running port {port}", port);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
