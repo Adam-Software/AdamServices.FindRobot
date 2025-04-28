@@ -6,6 +6,10 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <Version>1.0.2</Version>
+    <IsPackable>false</IsPackable>
+    <Title>$(SolutionName)</Title>
+    <Authors>vertigra</Authors>
+    <Product>$(SolutionName)</Product>
   </PropertyGroup>
 
   <ItemGroup>

@@ -2,6 +2,7 @@
   "profiles": {
     "FindRobot": {
       "commandName": "Project",
+      "commandLineArgs": "--help",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
