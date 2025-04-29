@@ -5,10 +5,10 @@ name: .NET Build And Publish Release
 
 on:
   push:
-    #branches: 
-    #  - "**"
-    tags: 
-      - "v.[0-9]+.[0-9]+.[0-9]+"
+    branches: 
+      - "**"
+    #tags: 
+    #  - "v.[0-9]+.[0-9]+.[0-9]+"
   #pull_request:
   #  branches: 
   #    - "**"
@@ -37,6 +37,11 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
+    - name: Create service_info.json file
+      run: |
+        cd src/$PROJECT_NAME
+        dotnet run 
         
     - name: Publish
       run: | 
