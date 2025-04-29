@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindRobot", "src\FindRobot\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "package_description", "package_description", "{FFA0CEFE-8A1A-495E-921C-488929452EF3}"
 	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 		service_info.json = service_info.json
 	EndProjectSection
 EndProject
