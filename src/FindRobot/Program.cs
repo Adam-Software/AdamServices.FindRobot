@@ -31,6 +31,7 @@ namespace FindRobot
 
                         SettingsService options = new();
                         context.Configuration.GetRequiredSection("AppSettingsOptions").Bind(options);
+
                         services.AddSingleton<ISettingsService>(options);
 
                         services.AddLogging(loggingBuilder =>
@@ -44,7 +45,7 @@ namespace FindRobot
                         });
 
                         services.AddAdamServiceFileCreator();
-                        services.AddHostedService<FindRobotService>();
+                        services.AddHostedService<FindRobotService>();      
                     })
 
                     .Build();
