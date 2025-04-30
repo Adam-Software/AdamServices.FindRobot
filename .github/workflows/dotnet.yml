@@ -51,14 +51,14 @@ jobs:
     - name: Zip arm64 release
       uses: vimtor/action-zip@v1.2
       with:
-        files: "${{ env.OUTPUT_ARM64_DIR }}"
+        files: "${{ env.OUTPUT_ARM64_DIR/ service_info.json }}" 
         recursive: true
         dest: "${{ env.PROJECT_NAME }}.arm64.portable.zip"
     
     - name: Zip win64 release
       uses: vimtor/action-zip@v1.2
       with:
-        files: "${{ env.OUTPUT_WIN64_DIR }}"
+        files: "${{ env.OUTPUT_WIN64_DIR/ service_info.json }}"
         recursive: true
         dest: "${{ env.PROJECT_NAME }}.win64.portable.zip"
 
@@ -70,5 +70,4 @@ jobs:
         automatic_release_tag: "v.${{ env.VERSION }}"
         prerelease: false
         files: |
-            *.zip 
-            *.json
+            *.zip
