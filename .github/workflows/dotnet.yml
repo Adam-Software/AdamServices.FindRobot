@@ -70,4 +70,5 @@ jobs:
         automatic_release_tag: "v.${{ env.VERSION }}"
         prerelease: false
         files: |
-            *.zip            
+            *.zip 
+            *.json
