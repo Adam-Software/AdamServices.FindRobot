@@ -41,7 +41,7 @@ jobs:
     - name: Create service_info.json file
       run: |
         cd src/$PROJECT_NAME
-        dotnet run 
+        dotnet run [--environment Development] --version
         
     - name: Publish
       run: | 
